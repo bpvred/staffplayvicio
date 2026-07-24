@@ -271,3 +271,78 @@ img, video, iframe, svg {
     font-size: clamp(31px, 12vw, 42px);
   }
 }
+
+
+/* PATCH MOBILE FINAL */
+@media (max-width:680px){
+  .app-shell{
+    display:block !important;
+    width:100% !important;
+    margin:0 !important;
+    border-radius:0 !important;
+    overflow:hidden !important;
+  }
+
+  .sidebar{
+    width:100% !important;
+    min-height:auto !important;
+  }
+
+  .content-card{
+    width:100% !important;
+    padding:16px 12px !important;
+  }
+
+  .topbar{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:16px !important;
+  }
+
+  .topbar h1{
+    font-size:26px !important;
+  }
+
+  .hero-panel h2{
+    font-size:38px !important;
+    overflow-wrap:anywhere !important;
+  }
+
+  .section-heading{
+    width:100% !important;
+  }
+
+  .section-heading h2{
+    font-size:24px !important;
+    overflow-wrap:anywhere !important;
+  }
+
+  .field>span,
+  .scenario>span,
+  .notice,
+  .agreement{
+    overflow-wrap:anywhere !important;
+  }
+
+  .form-actions{
+    display:flex !important;
+    flex-direction:column !important;
+    position:static !important;
+    margin:20px 0 0 !important;
+    padding:14px 0 !important;
+  }
+
+  .form-actions .btn{
+    width:100% !important;
+    flex:none !important;
+  }
+
+  .steps{
+    overflow-x:auto !important;
+    flex-wrap:nowrap !important;
+  }
+
+  .step-item{
+    flex:0 0 auto !important;
+  }
+}
