@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#090909" />
+  <meta name="description" content="Formulário oficial de recrutamento administrativo da Play Vício Roleplay VRed." />
+  <title>Recrutamento Staff | Play Vício VRed</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="orb orb-one"></div>
+  <div class="orb orb-two"></div>
+
+  <main class="app-shell">
+    <aside class="sidebar" aria-label="Progresso da candidatura">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">BPV</div>
+        <div>
+          <strong>PLAY VÍCIO</strong>
+          <span>RECRUTAMENTO STAFF</span>
+        </div>
+      </div>
+
+      <nav class="steps" id="stepNav">
+        <button class="step-item active" data-step="0"><span>01</span><div><b>Início</b><small>Apresentação</small></div></button>
+        <button class="step-item" data-step="1"><span>02</span><div><b>Dados</b><small>Informações pessoais</small></div></button>
+        <button class="step-item" data-step="2"><span>03</span><div><b>Conhecimentos</b><small>Conceitos de RP</small></div></button>
+        <button class="step-item" data-step="3"><span>04</span><div><b>Situações</b><small>Conduta administrativa</small></div></button>
+        <button class="step-item" data-step="4"><span>05</span><div><b>Atendimento</b><small>Postura e equilíbrio</small></div></button>
+        <button class="step-item" data-step="5"><span>06</span><div><b>Compromisso</b><small>Disponibilidade</small></div></button>
+        <button class="step-item" data-step="6"><span>07</span><div><b>Finalização</b><small>Revisão e envio</small></div></button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <span>PROCESSO SELETIVO</span>
+        <b>ADMINISTRATIVO · VRED</b>
+      </div>
+    </aside>
+
+    <section class="content-card">
+      <header class="topbar">
+        <div>
+          <span class="eyebrow">FORMULÁRIO ADMINISTRATIVO</span>
+          <h1 id="pageTitle">Recrutamento Staff</h1>
+        </div>
+        <div class="progress-box" aria-live="polite">
+          <div class="progress-meta"><span id="stepLabel">Etapa 1 de 7</span><b id="progressPercent">0%</b></div>
+          <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+        </div>
+      </header>
+
+      <form id="staffForm" novalidate>
+        <section class="form-step active" data-step="0">
+          <div class="hero-panel">
+            <div class="status-pill"><span></span> INSCRIÇÕES ABERTAS</div>
+            <p class="hero-kicker">PLAY VÍCIO ROLEPLAY VRED</p>
+            <h2>Recrutamento<br><em>Administrativo</em></h2>
+            <p class="hero-copy">Faça parte da equipe responsável por manter a organização, o respeito e a qualidade do Roleplay dentro da cidade.</p>
+
+            <div class="info-grid">
+              <article><span>⏱</span><div><b>Tempo estimado</b><small>15 a 25 minutos</small></div></article>
+              <article><span>🛡</span><div><b>Processo oficial</b><small>Análise pela administração</small></div></article>
+              <article><span>💾</span><div><b>Salvamento local</b><small>Suas respostas ficam no navegador</small></div></article>
+            </div>
+
+            <div class="notice">
+              <b>Antes de começar</b>
+              <ul>
+                <li>Responda com sinceridade e usando suas próprias palavras.</li>
+                <li>Respostas incompletas, copiadas ou falsas podem causar reprovação.</li>
+                <li>O envio da candidatura não garante aprovação.</li>
+              </ul>
+            </div>
+
+            <label class="agreement">
+              <input type="checkbox" id="agreement" required />
+              <span class="fake-check"></span>
+              <span>Li as orientações e estou pronto para iniciar minha candidatura.</span>
+            </label>
+          </div>
+        </section>
+
+        <section class="form-step" data-step="1">
+          <div class="section-heading"><span>01</span><div><h2>Informações pessoais</h2><p>Dados básicos para identificação do candidato.</p></div></div>
+          <div class="field-grid two-cols">
+            <label class="field"><span>Nick no servidor *</span><input name="nick" type="text" maxlength="40" placeholder="Ex.: Alexandre Dias" required /></label>
+            <label class="field"><span>ID no servidor *</span><input name="id" type="number" min="1" max="999999" placeholder="Ex.: 125" required /></label>
+            <label class="field"><span>Idade *</span><input name="idade" type="number" min="13" max="99" placeholder="Ex.: 18" required /></label>
+            <label class="field"><span>Discord (usuário) *</span><input name="discord" type="text" maxlength="60" placeholder="Ex.: usuario ou usuario#0000" required /></label>
+          </div>
+          <label class="field"><span>Quanto tempo joga na Play Vício Roleplay VRed? *</span><input name="tempo_servidor" type="text" maxlength="120" placeholder="Informe há quanto tempo joga no servidor" required /></label>
+          <label class="field"><span>Já fez parte de alguma Staff? Se sim, onde e qual cargo? *</span><textarea name="experiencia_staff" rows="5" maxlength="900" placeholder="Conte sua experiência anterior ou informe que nunca participou" required></textarea><small class="counter">0 / 900</small></label>
+        </section>
+
+        <section class="form-step" data-step="2">
+          <div class="section-heading"><span>02</span><div><h2>Conhecimentos de Roleplay</h2><p>Explique os conceitos com suas próprias palavras.</p></div></div>
+          <div class="question-stack">
+            <label class="field"><span>O que significa Roleplay para você? *</span><textarea name="rp" rows="5" maxlength="1000" required></textarea><small class="counter">0 / 1000</small></label>
+            <label class="field"><span>O que é Meta Gaming (MG)? *</span><textarea name="mg" rows="4" maxlength="700" required></textarea><small class="counter">0 / 700</small></label>
+            <label class="field"><span>O que é Power Gaming (PG)? *</span><textarea name="pg" rows="4" maxlength="700" required></textarea><small class="counter">0 / 700</small></label>
+            <label class="field"><span>O que é Death Match (DM)? *</span><textarea name="dm" rows="4" maxlength="700" required></textarea><small class="counter">0 / 700</small></label>
+            <label class="field"><span>O que é Vehicle Death Match (VDM)? *</span><textarea name="vdm" rows="4" maxlength="700" required></textarea><small class="counter">0 / 700</small></label>
+            <label class="field"><span>Como você agiria ao atender um jogador que está sendo desrespeitoso? *</span><textarea name="jogador_desrespeitoso" rows="5" maxlength="1000" required></textarea><small class="counter">0 / 1000</small></label>
+          </div>
+        </section>
+
+        <section class="form-step" data-step="3">
+          <div class="section-heading"><span>03</span><div><h2>Situações administrativas</h2><p>Demonstre como você avaliaria e resolveria cada situação.</p></div></div>
+          <div class="scenario-list">
+            <label class="scenario"><b>Cenário 01</b><span>Um jogador abre ticket dizendo que perdeu um veículo por causa de um bug. Como você procede? *</span><textarea name="bug_veiculo" rows="5" maxlength="1200" required></textarea><small class="counter">0 / 1200</small></label>
+            <label class="scenario"><b>Cenário 02</b><span>Dois jogadores estão discutindo e ambos afirmam estar certos. O que você faz? *</span><textarea name="discussao_jogadores" rows="5" maxlength="1200" required></textarea><small class="counter">0 / 1200</small></label>
+            <label class="scenario"><b>Cenário 03</b><span>Você presencia um membro da Staff cometendo um erro. Como age? *</span><textarea name="erro_staff" rows="5" maxlength="1200" required></textarea><small class="counter">0 / 1200</small></label>
+            <label class="scenario"><b>Cenário 04</b><span>Um jogador denuncia outro sem apresentar provas. Qual seria sua resposta? *</span><textarea name="denuncia_sem_provas" rows="5" maxlength="1200" required></textarea><small class="counter">0 / 1200</small></label>
+            <label class="scenario"><b>Cenário 05</b><span>O que você faria ao identificar um possível uso de trapaças (cheat)? *</span><textarea name="possivel_cheat" rows="5" maxlength="1200" required></textarea><small class="counter">0 / 1200</small></label>
+          </div>
+        </section>
+
+        <section class="form-step" data-step="4">
+          <div class="section-heading"><span>04</span><div><h2>Atendimento ao jogador</h2><p>Avaliação de postura, respeito e controle emocional.</p></div></div>
+          <div class="question-stack">
+            <label class="field"><span>Como você define um bom atendimento ao jogador? *</span><textarea name="bom_atendimento" rows="5" maxlength="1000" required></textarea><small class="counter">0 / 1000</small></label>
+            <label class="field"><span>Como você lidaria com um jogador nervoso ou ofendendo a equipe? *</span><textarea name="jogador_nervoso" rows="5" maxlength="1000" required></textarea><small class="counter">0 / 1000</small></label>
+            <label class="field"><span>Você consegue manter a calma sob pressão? Explique. *</span><textarea name="calma_pressao" rows="5" maxlength="1000" required></textarea><small class="counter">0 / 1000</small></label>
+          </div>
+        </section>
+
+        <section class="form-step" data-step="5">
+          <div class="section-heading"><span>05</span><div><h2>Compromisso e disponibilidade</h2><p>Informe sua rotina e o que pretende agregar à equipe.</p></div></div>
+          <div class="field-grid two-cols">
+            <label class="field"><span>Quantas horas por dia pode dedicar à Staff? *</span><input name="horas_dia" type="text" maxlength="80" placeholder="Ex.: 3 a 5 horas" required /></label>
+            <label class="field"><span>Quais dias e horários costuma estar online? *</span><input name="dias_horarios" type="text" maxlength="180" placeholder="Ex.: Seg. a sex., das 19h às 23h" required /></label>
+          </div>
+
+          <div class="choice-grid">
+            <fieldset class="choice-card"><legend>Possui microfone funcional? *</legend><label><input type="radio" name="microfone" value="Sim" required><span>Sim</span></label><label><input type="radio" name="microfone" value="Não"><span>Não</span></label></fieldset>
+            <fieldset class="choice-card"><legend>Está disposto a seguir as regras da Staff e manter sigilo? *</legend><label><input type="radio" name="sigilo" value="Sim" required><span>Sim</span></label><label><input type="radio" name="sigilo" value="Não"><span>Não</span></label></fieldset>
+          </div>
+
+          <label class="field"><span>Por que deseja fazer parte da equipe administrativa da Play Vício Roleplay VRed? *</span><textarea name="motivo_staff" rows="6" maxlength="1300" required></textarea><small class="counter">0 / 1300</small></label>
+          <label class="field"><span>O que acredita que pode agregar à equipe? *</span><textarea name="agregar_equipe" rows="6" maxlength="1300" required></textarea><small class="counter">0 / 1300</small></label>
+        </section>
+
+        <section class="form-step" data-step="6">
+          <div class="section-heading"><span>06</span><div><h2>Finalização</h2><p>Última pergunta e confirmação da candidatura.</p></div></div>
+          <div class="final-question">
+            <span class="star">★</span>
+            <label class="field"><span>Em poucas palavras, por que deveríamos escolher você e não outro candidato? *</span><textarea name="pergunta_final" rows="8" maxlength="1600" placeholder="Apresente seus diferenciais com clareza e sinceridade" required></textarea><small class="counter">0 / 1600</small></label>
+          </div>
+
+          <div class="review-card">
+            <div><span>Tempo de preenchimento</span><b id="elapsedTime">00:00</b></div>
+            <div><span>Campos respondidos</span><b id="answeredCount">0 / 24</b></div>
+            <div><span>Status</span><b class="status-review">Aguardando revisão</b></div>
+          </div>
+
+          <label class="agreement final-agreement">
+            <input type="checkbox" id="finalConfirm" required />
+            <span class="fake-check"></span>
+            <span>Confirmo que revisei minhas respostas e que todas as informações são verdadeiras.</span>
+          </label>
+        </section>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-ghost" id="prevBtn" disabled>← Voltar</button>
+          <button type="button" class="btn btn-primary" id="nextBtn">Iniciar candidatura →</button>
+          <button type="submit" class="btn btn-primary hidden" id="submitBtn">Enviar candidatura</button>
+        </div>
+      </form>
+
+      <div class="success-screen hidden" id="successScreen">
+        <div class="success-card">
+          <div class="success-icon">✓</div>
+          <span class="eyebrow">CANDIDATURA REGISTRADA</span>
+          <h2>Formulário enviado com sucesso!</h2>
+          <p class="success-intro">Sua candidatura foi recebida e será analisada pela equipe administrativa do <strong>Brasil Play Vício Roleplay</strong>.</p>
+          <div class="success-notice">
+            <span class="success-notice-icon">💬</span>
+            <p><strong>Caso você seja aprovado,</strong> um administrador ou responsável pela Staff entrará em contato com você através do Discord informado no formulário.</p>
+          </div>
+          <p class="success-footer-text">Agradecemos pelo seu interesse em fazer parte da nossa equipe. <strong>Boa sorte!</strong> 🍀</p>
+          <div class="protocol"><span>Protocolo da candidatura</span><b id="protocolNumber">BPV-000000</b></div>
+          <button class="btn btn-ghost" id="newApplication">Enviar nova candidatura</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="alert"></div>
+  <div class="loading-overlay hidden" id="loadingOverlay"><div class="loader"></div><b>Enviando candidatura...</b><span>Aguarde enquanto validamos suas respostas.</span></div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
