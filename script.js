@@ -83,7 +83,7 @@ function buildDiscordMessages(d){
 
   return [
     {username:'Recrutamento BPV',allowed_mentions:{parse:[]},embeds:[embed(`📩 Nova candidatura Staff • ${d.protocol}`,
-`**Nick:** ${clean(d.nick)}\n**ID:** ${clean(d.id)}\n**Idade:** ${clean(d.idade)}\n**Discord:** ${clean(d.discord)}\n**Tempo no servidor:** ${clean(d.tempo_servidor)}\n\n**Experiência em Staff:**\n${clean(d.experiencia_staff)}`)]},
+`**Nick:** ${clean(d.nick)}\n**ID:** ${clean(d.id)}\n**Idade:** ${clean(d.idade)}\n**Discord:** ${clean(d.discord)}\n**WhatsApp:** ${clean(d.whatsapp)}\n**Tempo no servidor:** ${clean(d.tempo_servidor)}\n\n**Experiência em Staff:**\n${clean(d.experiencia_staff)}`)]},
 
     {username:'Recrutamento BPV',allowed_mentions:{parse:[]},embeds:[embed('📚 Conhecimentos de Roleplay',
 `**Roleplay:**\n${clean(d.rp)}\n\n**Meta Gaming (MG):**\n${clean(d.mg)}\n\n**Power Gaming (PG):**\n${clean(d.pg)}\n\n**Death Match (DM):**\n${clean(d.dm)}\n\n**Vehicle Death Match (VDM):**\n${clean(d.vdm)}\n\n**Jogador desrespeitoso:**\n${clean(d.jogador_desrespeitoso)}`)]},
