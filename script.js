@@ -104,33 +104,52 @@ function buildDiscordMessages(d){
   ];
 }
 
-async function postWebhook(webhook,payload){
-  const url=webhook.includes('?')?`${webhook}&wait=true`:`${webhook}?wait=true`;
-  let response=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
-  if(response.status===429){
-    const rate=await response.json().catch(()=>({}));
-    await sleep(Math.ceil((rate.retry_after||1)*1000)+250);
-    response=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+async function enviarCandidaturaAPI(payload){
+  const api = window.BPV_CONFIG?.API_URL?.trim();
+
+  if(!api){
+    throw new Error("API não configurada");
   }
-  if(!response.ok)throw new Error(`Discord ${response.status}`);
+
+  const response = await fetch(api,{
+    method:"POST",
+    headers:{
+      "Content-Type":"application/json"
+    },
+    body:JSON.stringify(payload)
+  });
+
+  if(!response.ok){
+    throw new Error(`API ${response.status}`);
+  }
 }
 
 form.addEventListener('submit',async e=>{
-  e.preventDefault();if(!validateStep(currentStep))return;
-  const webhook=window.BPV_CONFIG?.DISCORD_WEBHOOK_URL?.trim();
-  if(!webhook){showToast('O webhook do Discord não está configurado.');return}
-  loadingOverlay.classList.remove('hidden');submitBtn.disabled=true;
+  e.preventDefault();
+
+  if(!validateStep(currentStep))return;
+
+  loadingOverlay.classList.remove('hidden');
+  submitBtn.disabled=true;
+
   try{
     const payload=buildPayload();
-    const messages=buildDiscordMessages(payload);
-    for(let i=0;i<messages.length;i++){
-      await postWebhook(webhook,messages[i]);
-      if(i<messages.length-1)await sleep(700);
-    }
-    document.getElementById('protocolNumber').textContent=payload.protocol;
-    form.classList.add('hidden');document.querySelector('.topbar').classList.add('hidden');successScreen.classList.remove('hidden');localStorage.removeItem(STORAGE_KEY);
-  }catch(err){console.error(err);showToast('Não foi possível enviar ao Discord. Tente novamente em alguns instantes.')}finally{loadingOverlay.classList.add('hidden');submitBtn.disabled=false}
-});
-document.getElementById('newApplication').addEventListener('click',()=>{localStorage.removeItem(STORAGE_KEY);location.reload()});
 
+    await enviarCandidaturaAPI(payload);
+
+    document.getElementById('protocolNumber').textContent=payload.protocol;
+    form.classList.add('hidden');
+    document.querySelector('.topbar').classList.add('hidden');
+    successScreen.classList.remove('hidden');
+    localStorage.removeItem(STORAGE_KEY);
+
+  }catch(err){
+    console.error(err);
+    showToast('Não foi possível enviar a candidatura.');
+  }finally{
+    loadingOverlay.classList.add('hidden');
+    submitBtn.disabled=false;
+  }
+});
+   
 loadDraft();updateCounters();updateUI();
